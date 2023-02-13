@@ -1,3 +1,5 @@
+const { AllRoutes } = require('./router/router')
+
 module.exports = class Application{
     #express = require('express')
     #app = this.#express()
@@ -16,7 +18,7 @@ module.exports = class Application{
     }
     createserver(PORT){
         const http = require('http')
-        const server = http.createserver(this.#app)
+        const server = http.createServer(this.#app)
         server.listen(PORT,()=>{
             console.log(`Server Run > On http://localhost:${PORT}`)
         })
@@ -52,5 +54,12 @@ module.exports = class Application{
                 message : 'this is a new express application'
             })
         })
+        this.#app.use(AllRoutes)
+        // this.#app.use((err , req,res,next) => {
+        //     try {
+        //     } catch (error) {
+        //         next(error)
+        //     }
+        // })
     }
 }
