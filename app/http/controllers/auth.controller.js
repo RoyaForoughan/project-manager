@@ -1,6 +1,7 @@
 const { validationResult } = require("express-validator")
 const { UserModel } = require("../../models/user")
-const { hashString } = require("../../modules/functions")
+const { hashString, tokenGenerator } = require("../../modules/functions")
+const bcrypt = require('bcrypt')
 
 class AuthController{
     async register(req,res,next){
@@ -18,8 +19,26 @@ class AuthController{
             next(error)
         }
     }
-    login(){
-
+    async login(req,res, next){
+        try {
+            const {username , password} = req.body
+            const user = await UserModel.findOne({username})
+            if(!user) throw {status : 401 , message : 'نام کاربر ی یا رمز عبور اشتباه می باشد'}
+            const compareResult = bcrypt.compareSync(password , user.password)
+            if(!compareResult) throw {status : 401 , massage : 'نام کاربری یا رمز عبور اشتباه می باشد'}
+            const token = tokenGenerator({username})
+            user.token = token
+            await user.save()
+            res.status(200).json({
+                status : 200 , 
+                success : true , 
+                message : 'شما با موفقیت وارد حساب کاربری خود شدید',
+                token 
+            })
+            return res.json(req.body)
+        } catch (error) {
+            next(error)
+        }
     }
     resetPassword(){
 

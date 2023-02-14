@@ -3,9 +3,20 @@ Post http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "username":"royaforoughan2",
-    "email":"royafrn@google.com",
-    "mobile":"09173145265",
+    "username":"royaforoughan3",
+    "email":"royafrn3@google.com",
+    "mobile":"09173145269",
     "password":"123456",
     "confirm_password":"123456"
+}
+
+
+### Login request
+Post http://localhost:3000/auth/login
+Content-Type: application/json
+Authorization: Bearer {{$dotenv token}}
+
+{
+    "username":"royaforoughan3",
+    "password":"123456"
 }
