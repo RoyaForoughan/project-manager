@@ -1,4 +1,15 @@
 ###get user profile
-http://localhost:3000/user/profile
+GET http://localhost:3000/user/profile
+Authorization: Bearer {{$dotenv token}}
+
+###edit user profile
+POST  http://localhost:3000/user/profile
 Content-Type: application/json
 Authorization: Bearer {{$dotenv token}}
+
+{
+    "first_name":"Shiva",
+    "last_name":"Frn",
+    "skills":["programming","node.js","express.js"]
+}
+
