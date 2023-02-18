@@ -2,6 +2,7 @@ const { validationResult } = require("express-validator")
 
 
 function expressValidatorMapper(req,res,next){
+    console.log(expressValidatorMapper);
     let messages = {}
        const result = validationResult(req)
         if(result?.errors?.length > 0){
