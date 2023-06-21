@@ -16,7 +16,7 @@ Content-Type: application/json
 
 Post http://localhost:3000/auth/login
 Content-Type: application/json
-Authorization: Bearer{{$dotenv token}}
+Authorization: Bearer {{$dotenv token}}
 
 {
     "username" : "Roya.frn3",
