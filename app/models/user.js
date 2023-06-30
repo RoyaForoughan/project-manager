@@ -7,6 +7,7 @@ const UserSchima = new mongoose.Schema({
     roles:{type:[String] , default:['USER']},
     mobile:{type:String,required:true , unique:true},
     password:{type:String,required:true},
+    profile_image:{type:String,required:false},
     teams:{type:[mongoose.Types.ObjectId],default:[]},
     skills:{type:[String],default:[]},
     token:{type:String , default:''}
