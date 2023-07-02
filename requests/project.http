@@ -7,3 +7,16 @@ Content-Type: application/json
     "title" : "title of project",
     "text" : "text of project for project manager of course"
 }
+
+### create project
+GET http://localhost:3000/project/list
+Authorization: Bearer {{$dotenv token}}
+
+### create project
+GET http://localhost:3000/project/649f050c9f9f4d2f591d0b91
+Authorization: Bearer {{$dotenv token}}
+
+
+### create project
+DELETE http://localhost:3000/project/remove/649f050c9f9f4d2f591d0b91
+Authorization: Bearer {{$dotenv token}}
