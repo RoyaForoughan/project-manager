@@ -4,19 +4,32 @@ Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
 {
-    "title" : "title of project",
-    "text" : "text of project for project manager of course"
+    "title" : "title of project1",
+    "text" : "text of project for project manager of course1"
 }
 
-### create project
+### get all project
 GET http://localhost:3000/project/list
 Authorization: Bearer {{$dotenv token}}
 
-### create project
-GET http://localhost:3000/project/649f050c9f9f4d2f591d0b91
+### get project by id
+GET http://localhost:3000/project/64aaa3a8d3b40f1df242530c
 Authorization: Bearer {{$dotenv token}}
 
 
-### create project
+### remove project by id
 DELETE http://localhost:3000/project/remove/649f050c9f9f4d2f591d0b91
 Authorization: Bearer {{$dotenv token}}
+
+
+
+### update project
+PUT http://localhost:3000/project/edit/64aaa3a8d3b40f1df242530c
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "title" : "",
+    "text" : "",
+    "tags" : ["tag1" , "tag2"]
+}
