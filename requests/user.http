@@ -12,3 +12,22 @@ Content-Type: application/json
     "last_name" : "frn3",
     "skills" : ["programming","nest.js","node.js"]
 }
+
+
+### get all user requests
+GET http://localhost:3000/user/requests
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+### get accepted user requests
+GET http://localhost:3000/user/requests/accepted
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+### accepted requests
+GET http://localhost:3000/user/change-status-request/64b2ae78fc66fd662410281d/accepted
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+

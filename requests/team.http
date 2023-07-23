@@ -1,0 +1,62 @@
+### create team
+Post http://localhost:3000/team/create
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "name" : "title of team2",
+    "description" : "text of team2 for project manager of course2",
+    "username" : "sedighi2"
+}
+
+### get all team
+GET http://localhost:3000/team/list
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+### get team by id
+GET http://localhost:3000/team/64b0e0d84fe307090e2fdd1c
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+### get team by me
+GET http://localhost:3000/team/me
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+
+### remove team by id
+DELETE http://localhost:3000/team/remove/64af98fd66924342930e205e
+Authorization: Bearer {{$dotenv token}}
+
+
+
+### update project
+PUT http://localhost:3000/project/edit/64aaa3aed3b40f1df242530f
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "title" : "",
+    "text" : "",
+    "tags" : ["tag1" , "tag2"]
+}
+
+
+### invite to team
+GET http://localhost:3000/team/invite/64b0e0c74fe307090e2fdd18/Roya.frn1
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+### update team
+PUT http://localhost:3000/team/update/64b0e0d84fe307090e2fdd1c
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "name" : "Roya Team 1",
+    "description" : "Roya team has been updated"
+}

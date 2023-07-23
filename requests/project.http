@@ -13,18 +13,18 @@ GET http://localhost:3000/project/list
 Authorization: Bearer {{$dotenv token}}
 
 ### get project by id
-GET http://localhost:3000/project/64aaa3a8d3b40f1df242530c
+GET http://localhost:3000/project/64aaa3aed3b40f1df242530f
 Authorization: Bearer {{$dotenv token}}
 
 
 ### remove project by id
-DELETE http://localhost:3000/project/remove/649f050c9f9f4d2f591d0b91
+DELETE http://localhost:3000/project/remove/64aaa3a8d3b40f1df242530c
 Authorization: Bearer {{$dotenv token}}
 
 
 
 ### update project
-PUT http://localhost:3000/project/edit/64aaa3a8d3b40f1df242530c
+PUT http://localhost:3000/project/edit/64aaa3aed3b40f1df242530f
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
